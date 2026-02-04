@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { GameState, PowerUp, Puzzle, GameHistory } from '@/types/game.types';
+import { GameState, Puzzle, GameHistory } from '@/types/game.types';
 import { initializePowerUps } from '@/utils/powerUps';
 import { validateCell, isCageComplete, isPuzzleComplete } from '@/engine/validator';
 

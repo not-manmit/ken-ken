@@ -1,4 +1,4 @@
-import { Puzzle, Cage, Operation } from '@/types/game.types';
+import { Puzzle, Cage } from '@/types/game.types';
 
 /**
  * Validates if a number can be placed in a specific cell

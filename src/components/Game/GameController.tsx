@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useGameStore } from '@/stores/gameStore';
-import { samplePuzzles, generatePuzzle } from '@/engine/puzzleGenerator';
+import { generatePuzzle } from '@/engine/puzzleGenerator';
 import { GridSize, GameMode } from '@/types/game.types';
 import GridCanvas from '@/components/Grid/GridCanvas';
 import NumberSelector from '@/components/UI/NumberSelector';
@@ -13,7 +13,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 const GameController: React.FC = () => {
     const [showMenu, setShowMenu] = useState(true);
     const [showRules, setShowRules] = useState(false);
-    const [gameStarted, setGameStarted] = useState(false);
 
     const {
         currentPuzzle,
@@ -21,7 +20,6 @@ const GameController: React.FC = () => {
         completedPuzzles,
         validatePuzzle,
         selectedCell,
-        resetGame,
     } = useGameStore();
 
     // Handle starting game from menu
@@ -31,13 +29,11 @@ const GameController: React.FC = () => {
         puzzle.mode = gameMode;
         initializeGame(puzzle);
         setShowMenu(false);
-        setGameStarted(true);
     };
 
     // Handle returning to menu
     const handleBackToMenu = () => {
         setShowMenu(true);
-        setGameStarted(false);
     };
 
     // Handle viewing rules
