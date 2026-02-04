@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #1f2937;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+#root {
+    width: 100%;
+    min-height: 100vh;
+}
+
+@layer utilities {
+    .cell-glow {
+        box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+    }
+
+    .cage-border {
+        position: relative;
+    }
+
+    .cage-border-top {
+        border-top-width: 4px !important;
+        border-top-style: solid !important;
+    }
+
+    .cage-border-right {
+        border-right-width: 4px !important;
+        border-right-style: solid !important;
+    }
+
+    .cage-border-bottom {
+        border-bottom-width: 4px !important;
+        border-bottom-style: solid !important;
+    }
+
+    .cage-border-left {
+        border-left-width: 4px !important;
+        border-left-style: solid !important;
+    }
+
+    .number-button {
+        @apply w-12 h-12 rounded-lg font-bold text-xl transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer bg-gray-700 hover:bg-primary text-white;
+    }
+
+    .power-up-card {
+        @apply p-4 rounded-xl bg-gray-800 border-2 border-gray-700 hover:border-primary transition-all cursor-pointer hover:scale-105 active:scale-95;
+    }
+
+    .stat-card {
+        @apply bg-gray-800 rounded-lg p-3 text-center;
+    }
+}
